@@ -71,4 +71,4 @@ Si la case « uniquement si le joueur est connecté » existe sur la récompense
 
 - Les récompenses d'exemple utilisent `eco give` (Essentials/Vault) : adapte-les à ton serveur.
 - Un vote pour un joueur jamais vu par le serveur est refusé par défaut (`vote.allow-unknown-players`).
-- Si `mvn package` échoue sur `paper-api`, ajuste `<paper.version>` dans `pom.xml`.
+- Version de Paper API : `26.2.build.119-stable` (propriété `<paper.version>` du `pom.xml`).

@@ -13,9 +13,8 @@
     <properties>
         <maven.compiler.release>25</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- Si la compilation échoue sur cette ligne : mets ici la version exacte de paper-api pour 26.2
-             (voir https://repo.papermc.io/service/rest/repository/browse/maven-public/io/papermc/paper/paper-api/) -->
-        <paper.version>26.2-R0.1-SNAPSHOT</paper.version>
+        <!-- Version stable de Paper 26.2 (format 26.2.build.N-stable). Pour toujours prendre la dernière : [26.2.build,) -->
+        <paper.version>26.2.build.119-stable</paper.version>
     </properties>
 
     <repositories>
