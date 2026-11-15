@@ -1,0 +1,45 @@
+# ============================================================
+#  AzuriumVote - Configuration générale
+# ============================================================
+
+vote:
+  # Lien du site de vote (bouton "Voter" du menu)
+  url: "https://ivalona.fr/vote"
+  # true  = la récompense du vote est donnée tout de suite si le joueur est connecté
+  # false = elle est toujours mise en attente (menu "Récompenses")
+  reward-online: true
+  # Récupère automatiquement les récompenses en attente à la connexion
+  auto-claim-on-join: false
+  # Message global à chaque vote (messages/messages.yml -> vote-broadcast)
+  broadcast: true
+  # Accepter un vote pour un joueur jamais vu par le serveur (déconseillé : l'UUID peut être faux)
+  allow-unknown-players: false
+
+voteparty:
+  # Nombre de votes nécessaires pour déclencher la VoteParty
+  votes-required: 200
+  # true = les votes en trop sont conservés après la party, false = le compteur repart à 0
+  carry-over: false
+  # Barre de progression (%bar%)
+  bar:
+    length: 20
+    filled-char: "█"
+    empty-char: "█"
+    filled-color: "&a"
+    empty-color: "&7"
+
+rewards:
+  # Si l'inventaire est plein, les items sont jetés au sol
+  drop-if-full: true
+
+# Fuseau horaire utilisé pour la réinitialisation des paliers (le 1er de chaque mois)
+timezone: "Europe/Paris"
+locale: "fr"
+month-format: "MMMM yyyy"
+
+# Sons : "clé.du.son;volume;pitch" (laisser vide pour désactiver)
+sounds:
+  open: "block.chest.open;0.7;1.2"
+  click: "ui.button.click;0.8;1"
+  claim: "entity.player.levelup;1;1"
+  error: "entity.villager.no;1;1"

@@ -1,0 +1,82 @@
+# ============================================================
+#  Menu principal (/vote)
+#
+#  title / size (multiple de 9, 9 à 54) / filler / items
+#  Chaque item : slot (ou slots: [0, 1, "3-5"]), item, amount, name, lore, glow, hide-flags,
+#                texture (tête en base64), head-owner (tête du joueur), commands, action
+#
+#  item    : un matériau (DIAMOND), un item Nexo (nexo:monitem) ou PLAYER_HEAD + texture
+#  action  : VOTE | REWARDS | VOTEPARTY | PALIERS | MAIN | CLOSE | NONE
+#  commands: liste de commandes exécutées au clic ("[console] ..." ou "[player] ...")
+#  Couleurs : &a, &b ... / &#RRGGBB / <#RRGGBB>
+#  Placeholders : %player% %votes% %total_votes% %pending% %claimable% %current% %required%
+#                 %remaining% %percent% %bar% %server_total% %party_count% %month%
+# ============================================================
+
+title: "&8» &b&lVote &8«"
+size: 27
+
+filler:
+  item: BLACK_STAINED_GLASS_PANE
+  name: " "
+
+items:
+  vote:
+    slot: 10
+    item: NETHER_STAR
+    name: "&b&lVoter"
+    glow: true
+    lore:
+      - ""
+      - "&7Vote sur notre site pour gagner"
+      - "&7des récompenses !"
+      - ""
+      - "&e» Clique pour obtenir le lien"
+    action: VOTE
+
+  rewards:
+    slot: 12
+    item: CHEST
+    name: "&a&lRécompenses"
+    lore:
+      - ""
+      - "&7Récupère les récompenses des votes"
+      - "&7faits pendant que tu étais déconnecté."
+      - ""
+      - "&7En attente : &e%pending%"
+      - ""
+      - "&e» Clique pour les récupérer"
+    action: REWARDS
+
+  voteparty:
+    slot: 14
+    item: FIREWORK_ROCKET
+    name: "&d&lVoteParty"
+    lore:
+      - ""
+      - "&7Votes totaux du serveur : &f%server_total%"
+      - ""
+      - "&7Prochaine party : &d%current%&8/&d%required%"
+      - "%bar% &f%percent%%"
+      - ""
+      - "&7Tous les &d%required% votes&7, tous les joueurs"
+      - "&7connectés reçoivent une récompense !"
+    action: VOTEPARTY
+
+  paliers:
+    slot: 16
+    item: EXPERIENCE_BOTTLE
+    name: "&6&lPaliers de vote"
+    lore:
+      - ""
+      - "&7Tes votes en &f%month% &7: &e%votes%"
+      - "&7Paliers à récupérer : &a%claimable%"
+      - ""
+      - "&e» Clique pour voir les paliers"
+    action: PALIERS
+
+  close:
+    slot: 22
+    item: BARRIER
+    name: "&cFermer"
+    action: CLOSE

@@ -1,0 +1,113 @@
+# ============================================================
+#  Récompenses des paliers de vote (réinitialisés le 1er de chaque mois)
+#
+#  Ajoute / retire des paliers librement (le nombre est le nombre de votes requis),
+#  puis donne-leur un emplacement dans menus/paliers.yml (section "paliers").
+#
+#  description : lignes affichées dans le lore du menu (à la place de %rewards%)
+#  commands / items / messages / title / sound : comme rewards/vote.yml
+#  Placeholders : %player% %palier% %votes% ...
+#
+#  Exemples fournis : adapte-les (la commande eco nécessite Essentials / Vault).
+#  Exemple Nexo : items: { cle: { item: "nexo:monitem", amount: 1 } }
+# ============================================================
+
+paliers:
+  10:
+    description:
+      - "&7- &e500$"
+    commands:
+      - "[console] eco give %player% 500"
+  20:
+    description:
+      - "&7- &e1 000$"
+      - "&7- &e16x Lingot d'or"
+    commands:
+      - "[console] eco give %player% 1000"
+    items:
+      reward:
+        item: GOLD_INGOT
+        amount: 16
+  30:
+    description:
+      - "&7- &e1 500$"
+      - "&7- &e5x Diamant"
+    commands:
+      - "[console] eco give %player% 1500"
+    items:
+      reward:
+        item: DIAMOND
+        amount: 5
+  50:
+    description:
+      - "&7- &e2 500$"
+      - "&7- &e10x Diamant"
+    commands:
+      - "[console] eco give %player% 2500"
+    items:
+      reward:
+        item: DIAMOND
+        amount: 10
+  75:
+    description:
+      - "&7- &e4 000$"
+      - "&7- &e16x Émeraude"
+    commands:
+      - "[console] eco give %player% 4000"
+    items:
+      reward:
+        item: EMERALD
+        amount: 16
+  100:
+    description:
+      - "&7- &e6 000$"
+      - "&7- &e3x Bloc de diamant"
+    commands:
+      - "[console] eco give %player% 6000"
+    items:
+      reward:
+        item: DIAMOND_BLOCK
+        amount: 3
+  150:
+    description:
+      - "&7- &e9 000$"
+      - "&7- &e4x Débris de netherite"
+    commands:
+      - "[console] eco give %player% 9000"
+    items:
+      reward:
+        item: NETHERITE_SCRAP
+        amount: 4
+  200:
+    description:
+      - "&7- &e12 000$"
+      - "&7- &e3x Pomme d'or enchantée"
+    commands:
+      - "[console] eco give %player% 12000"
+    items:
+      reward:
+        item: ENCHANTED_GOLDEN_APPLE
+        amount: 3
+  300:
+    description:
+      - "&7- &e20 000$"
+      - "&7- &e2x Lingot de netherite"
+    commands:
+      - "[console] eco give %player% 20000"
+    items:
+      reward:
+        item: NETHERITE_INGOT
+        amount: 2
+  500:
+    description:
+      - "&7- &e40 000$"
+      - "&7- &e1x Bloc de netherite"
+    commands:
+      - "[console] eco give %player% 40000"
+    items:
+      reward:
+        item: NETHERITE_BLOCK
+        amount: 1
+    title:
+      title: "&6&lPALIER 500"
+      subtitle: "&7Félicitations !"

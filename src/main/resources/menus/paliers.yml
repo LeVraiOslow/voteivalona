@@ -1,0 +1,92 @@
+# ============================================================
+#  Menu des paliers de vote
+#
+#  claim-click : clic pour récupérer un palier (LEFT, RIGHT, SHIFT_LEFT, ...)
+#  items       : items fixes (retour, infos...) - mêmes options que menus/main.yml
+#  states      : modèle d'item selon l'état du palier : locked / claimable / claimed
+#  paliers     : emplacement (slot) de chaque palier. Les paliers eux-mêmes (10, 20, ...)
+#                et leurs récompenses se définissent dans rewards/paliers.yml.
+#                Optionnel : redéfinir l'item d'un seul palier
+#                (ex. 500: { slot: 24, claimable: { item: "nexo:monitem" } })
+#
+#  Placeholders en plus : %palier% %palier_remaining% %state%
+#  Ligne de lore "%rewards%" = remplacée par la description du palier (rewards/paliers.yml)
+# ============================================================
+
+title: "&8» &6&lPaliers de vote &8«"
+size: 36
+claim-click: LEFT
+
+filler:
+  item: BLACK_STAINED_GLASS_PANE
+  name: " "
+
+items:
+  info:
+    slot: 4
+    item: BOOK
+    name: "&e&lTes votes en %month%"
+    lore:
+      - ""
+      - "&7Votes ce mois-ci : &e%votes%"
+      - "&7Total depuis le début : &f%total_votes%"
+      - ""
+      - "&7Les paliers sont réinitialisés"
+      - "&7le &e1er de chaque mois&7."
+  back:
+    slot: 31
+    item: ARROW
+    name: "&cRetour"
+    action: MAIN
+
+states:
+  locked:
+    item: RED_STAINED_GLASS_PANE
+    name: "&cPalier &e%palier% &cvotes"
+    lore:
+      - ""
+      - "&7Progression : &c%votes%&8/&e%palier%"
+      - "&7Il te manque &c%palier_remaining% &7vote(s)"
+      - ""
+      - "&7Récompenses :"
+      - "%rewards%"
+  claimable:
+    item: LIME_STAINED_GLASS_PANE
+    name: "&aPalier &e%palier% &avotes"
+    glow: true
+    lore:
+      - ""
+      - "&aTu as atteint ce palier !"
+      - ""
+      - "&7Récompenses :"
+      - "%rewards%"
+      - ""
+      - "&e» Clic gauche pour récupérer"
+  claimed:
+    item: GRAY_STAINED_GLASS_PANE
+    name: "&7Palier &e%palier% &7votes"
+    lore:
+      - ""
+      - "&a✔ Déjà récupéré ce mois-ci"
+
+paliers:
+  10:
+    slot: 11
+  20:
+    slot: 12
+  30:
+    slot: 13
+  50:
+    slot: 14
+  75:
+    slot: 15
+  100:
+    slot: 20
+  150:
+    slot: 21
+  200:
+    slot: 22
+  300:
+    slot: 23
+  500:
+    slot: 24

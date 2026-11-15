@@ -1,0 +1,63 @@
+# ============================================================
+#  AzuriumVote - Messages
+#  Couleurs : &a, &b ... / hex : &#RRGGBB ou <#RRGGBB>
+#  Une valeur vide ("") désactive le message.
+#  Placeholders : %prefix% %player% %votes% %total_votes% %pending% %claimable%
+#                 %current% %required% %remaining% %percent% %bar% %server_total%
+#                 %party_count% %month% %url% (+ %amount% %palier% %palier_remaining% selon le message)
+# ============================================================
+
+prefix: "&8[&bVote&8] "
+
+no-permission: "%prefix%&cTu n'as pas la permission."
+player-only: "%prefix%&cCette commande est réservée aux joueurs."
+unknown-player: "%prefix%&cJoueur inconnu : &e%target%"
+reload: "%prefix%&aConfiguration rechargée."
+
+# Lien de vote (chaque ligne est cliquable)
+vote-link:
+  - "%prefix%&7Clique ici pour voter : &b&n%url%"
+vote-link-hover: "&aClique pour ouvrir le site de vote"
+
+vote-broadcast: "%prefix%&b%player% &7vient de voter ! &8(&f%current%&7/&f%required%&8) &7» &e/vote"
+
+pending-join: "%prefix%&7Tu as &e%pending% &7récompense(s) de vote en attente ! &8» &e/vote"
+pending-claimed: "%prefix%&aTu as récupéré &e%amount% &arécompense(s) de vote !"
+no-pending: "%prefix%&cTu n'as aucune récompense en attente."
+
+palier-claimed: "%prefix%&aTu as récupéré le palier &e%palier% votes &a!"
+palier-locked: "%prefix%&cIl te manque &e%palier_remaining% &cvote(s) pour ce palier."
+palier-already: "%prefix%&cTu as déjà récupéré ce palier ce mois-ci."
+palier-available: "%prefix%&aTu peux récupérer le palier &e%palier% votes &a! &8» &e/vote"
+
+# Diffusé à tous les joueurs quand la VoteParty se déclenche
+party-start:
+  - ""
+  - "%prefix%&d&lVOTEPARTY &7» &fLe serveur a atteint &d%required% votes &f!"
+  - "%prefix%&7Tous les joueurs connectés reçoivent une récompense !"
+  - ""
+
+# Envoyé quand le joueur clique sur l'item VoteParty
+party-info:
+  - "%prefix%&dVoteParty &8» &f%current%&7/&f%required% &7votes &8(&f%percent%%&8)"
+  - "%prefix%&7Votes totaux sur le serveur : &f%server_total%"
+
+month-reset: "%prefix%&aNouveau mois ! Les paliers de vote ont été réinitialisés. &8» &e/vote"
+
+# Administration
+usage-admin:
+  - "%prefix%&e/vote reload"
+  - "%prefix%&e/vote addvote <joueur> [nombre]"
+  - "%prefix%&e/vote setparty <nombre>"
+  - "%prefix%&e/vote forceparty"
+  - "%prefix%&e/vote resetmonth <joueur|all>"
+  - "%prefix%&e/vote info <joueur>"
+admin-vote-added: "%prefix%&a+%amount% vote(s) enregistré(s) pour &e%target%&a."
+admin-party-set: "%prefix%&aCompteur VoteParty : &e%current%&7/&e%required%"
+admin-party-forced: "%prefix%&aVoteParty déclenchée."
+admin-reset-player: "%prefix%&aPaliers du mois réinitialisés pour &e%target%&a."
+admin-reset-all: "%prefix%&aPaliers du mois réinitialisés pour tous les joueurs."
+admin-info:
+  - "%prefix%&7Joueur : &e%target%"
+  - "%prefix%&7Votes ce mois-ci : &f%votes% &8| &7Total : &f%total_votes%"
+  - "%prefix%&7Récompenses en attente : &f%pending% &8| &7Paliers à récupérer : &f%claimable%"

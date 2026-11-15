@@ -1,0 +1,30 @@
+# ============================================================
+#  Récompense donnée à CHAQUE vote
+#  (immédiatement si le joueur est connecté, sinon via le menu "Récompenses")
+#
+#  commands : "[console] commande" (défaut) ou "[player] commande"
+#  items    : liste nommée, mêmes options que les menus (item: DIAMOND / nexo:monitem, amount, name, lore, glow)
+#  messages : messages envoyés au joueur
+#  title    : titre à l'écran (durées en ticks)
+#  sound    : "clé.du.son;volume;pitch"
+#  Placeholders : %player% %amount% %votes% %current% %required% %prefix% ...
+#
+#  Exemples fournis : adapte-les à ton serveur (la commande eco nécessite Essentials / Vault).
+# ============================================================
+
+commands:
+  - "[console] eco give %player% 100"
+
+items:
+  or:
+    item: GOLD_INGOT
+    amount: 2
+  # exemple Nexo :
+  # cle:
+  #   item: "nexo:cle_vote"
+  #   amount: 1
+
+messages:
+  - "%prefix%&aMerci d'avoir voté ! Tu as reçu ta récompense."
+
+sound: "entity.player.levelup;1;1"
