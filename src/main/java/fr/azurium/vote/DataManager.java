@@ -12,7 +12,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.time.YearMonth;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
@@ -38,13 +38,13 @@ public final class DataManager {
     private final AzuriumVote plugin;
     private final File file;
     private final Object ioLock = new Object();
-    private final Map<UUID, PlayerData> players = new HashMap<>();
+    private final Map<UUID, PlayerData> players = new ConcurrentHashMap<>();
 
-    private int partyCurrent;
-    private int partyCount;
-    private int serverTotal;
-    private String lastMonth = "";
-    private boolean dirty;
+    private volatile int partyCurrent;
+    private volatile int partyCount;
+    private volatile int serverTotal;
+    private volatile String lastMonth = "";
+    private volatile boolean dirty;
 
     public DataManager(AzuriumVote plugin) {
         this.plugin = plugin;
@@ -138,6 +138,11 @@ public final class DataManager {
             dirty = true;
         }
         return d;
+    }
+
+    /** Lecture seule (sans création ni mise à jour) : utilisable depuis n'importe quel thread. */
+    public PlayerData peek(UUID id) {
+        return players.get(id);
     }
 
     public UUID findByName(String name) {

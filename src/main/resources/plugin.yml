@@ -4,7 +4,7 @@ main: fr.azurium.vote.AzuriumVote
 api-version: '26.2'
 description: Vote, VoteParty et paliers de vote mensuels (compatible AzLink / Azuriom et Nexo)
 author: Ivalona
-softdepend: [Nexo, AzLink]
+softdepend: [Nexo, AzLink, PlaceholderAPI]
 
 commands:
   vote:

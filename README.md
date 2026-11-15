@@ -55,6 +55,22 @@ Si la case « uniquement si le joueur est connecté » existe sur la récompense
 - Placeholders : `%player% %votes% %total_votes% %pending% %claimable% %current% %required% %remaining%
   %percent% %bar% %server_total% %party_count% %month% %palier% %palier_remaining%`.
 
+## Placeholders PlaceholderAPI (CustomNameplates, scoreboard, hologrammes...)
+
+| Placeholder | Valeur |
+|---|---|
+| `%azuriumvote_voteparty%` | `12/200` |
+| `%azuriumvote_voteparty_current%` | votes actuels de la VoteParty |
+| `%azuriumvote_voteparty_required%` | votes requis |
+| `%azuriumvote_voteparty_remaining%` | votes restants |
+| `%azuriumvote_voteparty_percent%` | pourcentage (0-100) |
+| `%azuriumvote_voteparty_count%` | nombre de VoteParty déjà déclenchées |
+| `%azuriumvote_server_total%` | votes totaux du serveur |
+| `%azuriumvote_votes%` | votes du joueur ce mois-ci |
+| `%azuriumvote_total_votes%` | votes totaux du joueur |
+| `%azuriumvote_pending%` | récompenses en attente du joueur |
+| `%azuriumvote_claimable%` | paliers récupérables du joueur |
+
 ## Commandes
 
 | Commande | Permission | Description |

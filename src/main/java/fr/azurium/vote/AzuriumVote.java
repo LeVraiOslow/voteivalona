@@ -38,6 +38,11 @@ public final class AzuriumVote extends JavaPlugin {
             cmd.setTabCompleter(vc);
         }
 
+        if (getServer().getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            new PapiExpansion(this).register();
+            getLogger().info("Placeholders PlaceholderAPI enregistrés (%azuriumvote_...%).");
+        }
+
         // Vérification du changement de mois (toutes les minutes)
         Bukkit.getScheduler().runTaskTimer(this, () -> service.tickMonth(), 100L, 1200L);
         // Sauvegarde automatique (toutes les 30 s si modifications)
