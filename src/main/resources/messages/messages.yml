@@ -53,6 +53,7 @@ usage-admin:
   - "%prefix%&e/vote resetmonth <joueur|all>"
   - "%prefix%&e/vote info <joueur>"
 admin-vote-added: "%prefix%&a+%amount% vote(s) enregistré(s) pour &e%target%&a."
+admin-vote-queued: "%prefix%&eJoueur &6%target% &einconnu : &a%amount% &evote(s) mis en attente, appliqué(s) à sa prochaine connexion."
 admin-party-set: "%prefix%&aCompteur VoteParty : &e%current%&7/&e%required%"
 admin-party-forced: "%prefix%&aVoteParty déclenchée."
 admin-reset-player: "%prefix%&aPaliers du mois réinitialisés pour &e%target%&a."

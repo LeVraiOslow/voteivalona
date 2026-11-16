@@ -57,14 +57,25 @@ public final class VoteCommand implements CommandExecutor, TabCompleter {
                 return true;
             }
             case "addvote": {
+                plugin.getLogger().info("addvote reçu : /vote " + String.join(" ", args) + " (envoyé par " + sender.getName() + ")");
                 if (args.length < 2) {
                     msg.send(sender, "usage-admin", null);
                     return true;
                 }
                 OfflinePlayer target = resolve(args[1]);
                 if (target == null) {
-                    msg.send(sender, "unknown-player", Text.ph("%target%", args[1]));
-                    plugin.getLogger().warning("Vote ignoré : joueur inconnu '" + args[1] + "'");
+                    int q = 1;
+                    if (args.length >= 3) {
+                        try {
+                            q = Integer.parseInt(args[2]);
+                        } catch (NumberFormatException ignored) {
+                        }
+                    }
+                    q = Math.max(1, Math.min(1000, q));
+                    data.queueUnresolved(args[1], q);
+                    plugin.getLogger().warning("Pseudo '" + args[1] + "' inconnu du serveur : " + q
+                            + " vote(s) mis en attente, appliqué(s) à sa prochaine connexion.");
+                    msg.send(sender, "admin-vote-queued", Text.ph("%target%", args[1], "%amount%", String.valueOf(q)));
                     return true;
                 }
                 int amount = 1;

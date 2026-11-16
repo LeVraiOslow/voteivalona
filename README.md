@@ -13,12 +13,15 @@ Compatible **Nexo** (`nexo:monitem`) partout (menus et récompenses).
 
 Dans l'admin Azuriom : **Vote → Récompenses**, crée (ou modifie) une récompense avec cette commande :
 
-    vote addvote {player}
+    azuriumvote:vote addvote {player}
 
 AzLink l'exécute en console à chaque vote. Le plugin s'occupe du reste :
 - il compte le vote (paliers du mois, total, VoteParty) ;
 - si le joueur est connecté, il lui donne la récompense (`rewards/vote.yml`) ;
 - s'il est déconnecté, la récompense est mise en attente (menu **Récompenses** ou message à la connexion).
+
+Le préfixe `azuriumvote:` évite qu'un autre plugin ayant aussi une commande `/vote` intercepte la commande.
+Sur la récompense Azuriom, mets une chance de 100 % (sinon un autre lot peut être tiré à la place).
 
 Ne mets donc pas d'autres commandes de récompense côté site (sinon elles s'ajoutent à celles du plugin).
 Si la case « uniquement si le joueur est connecté » existe sur la récompense Azuriom, ne la coche pas.

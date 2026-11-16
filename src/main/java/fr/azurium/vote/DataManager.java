@@ -13,6 +13,8 @@ import java.nio.file.StandardCopyOption;
 import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
@@ -43,6 +45,7 @@ public final class DataManager {
     private volatile int partyCurrent;
     private volatile int partyCount;
     private volatile int serverTotal;
+    private final Map<String, Integer> unresolved = new ConcurrentHashMap<>();
     private volatile String lastMonth = "";
     private volatile boolean dirty;
 
@@ -59,6 +62,15 @@ public final class DataManager {
         partyCount = y.getInt("server.party-count", 0);
         serverTotal = y.getInt("server.total-votes", 0);
         lastMonth = y.getString("server.last-month", "");
+        unresolved.clear();
+        for (String entry : y.getStringList("unresolved")) {
+            int i = entry.lastIndexOf(':');
+            if (i <= 0) continue;
+            try {
+                unresolved.merge(entry.substring(0, i), Integer.parseInt(entry.substring(i + 1)), Integer::sum);
+            } catch (NumberFormatException ignored) {
+            }
+        }
 
         ConfigurationSection ps = y.getConfigurationSection("players");
         if (ps == null) return;
@@ -97,6 +109,9 @@ public final class DataManager {
             y.set(p + ".pending", d.pending);
             y.set(p + ".claimed", new ArrayList<>(d.claimed));
         }
+        List<String> un = new ArrayList<>();
+        for (Map.Entry<String, Integer> e : unresolved.entrySet()) un.add(e.getKey() + ":" + e.getValue());
+        y.set("unresolved", un);
         String content = y.saveToString();
         dirty = false;
         if (sync) write(content);
@@ -143,6 +158,18 @@ public final class DataManager {
     /** Lecture seule (sans création ni mise à jour) : utilisable depuis n'importe quel thread. */
     public PlayerData peek(UUID id) {
         return players.get(id);
+    }
+
+    /** Vote reçu pour un pseudo que le serveur ne sait pas encore résoudre : appliqué à sa prochaine connexion. */
+    public void queueUnresolved(String name, int amount) {
+        unresolved.merge(name.toLowerCase(Locale.ROOT), amount, Integer::sum);
+        dirty = true;
+    }
+
+    public int takeUnresolved(String name) {
+        Integer n = unresolved.remove(name.toLowerCase(Locale.ROOT));
+        if (n != null) dirty = true;
+        return n == null ? 0 : n;
     }
 
     public UUID findByName(String name) {

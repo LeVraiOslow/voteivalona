@@ -130,6 +130,8 @@ public final class VoteService {
     /** Enregistre un ou plusieurs votes (appelé par AzLink via /vote addvote <joueur>). */
     public void registerVote(OfflinePlayer target, int amount) {
         DataManager.PlayerData d = data().get(target.getUniqueId(), target.getName());
+        plugin.getLogger().info("Vote enregistré : +" + amount + " pour " + target.getName()
+                + " (" + (target.isOnline() ? "connecté" : "déconnecté") + ")");
         int before = d.monthVotes;
         d.monthVotes += amount;
         d.totalVotes += amount;
@@ -209,6 +211,8 @@ public final class VoteService {
     }
 
     public void onJoin(Player p) {
+        int queued = data().takeUnresolved(p.getName());
+        if (queued > 0) registerVote(p, queued);
         DataManager.PlayerData d = data().get(p.getUniqueId(), p.getName());
         if (d.pending <= 0) return;
         if (cfg().getBoolean("vote.auto-claim-on-join", false)) {
