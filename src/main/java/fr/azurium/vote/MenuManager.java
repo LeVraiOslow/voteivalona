@@ -105,6 +105,7 @@ public final class MenuManager {
         ConfigurationSection f = cfg.getConfigurationSection("filler");
         if (f != null && f.getBoolean("enabled", true)) {
             ItemStack filler = ItemFactory.build(plugin, f, ph, null, p, true);
+            if (f.getBoolean("hide-tooltip", true)) ItemFactory.hideTooltip(filler);
             for (int i = 0; i < inv.getSize(); i++) {
                 if (inv.getItem(i) == null) inv.setItem(i, filler.clone());
             }

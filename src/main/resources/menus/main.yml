@@ -5,6 +5,7 @@
 #  Chaque item : slot (ou slots: [0, 1, "3-5"]), item, amount, name, lore, glow, hide-flags,
 #                texture (tête en base64), head-owner (tête du joueur), commands, action
 #
+#  hide-tooltip : true = aucune infobulle au survol (le filler le fait déjà par défaut)
 #  item    : un matériau (DIAMOND), un item Nexo (nexo:monitem) ou PLAYER_HEAD + texture
 #  action  : VOTE | REWARDS | VOTEPARTY | PALIERS | MAIN | CLOSE | NONE
 #  commands: liste de commandes exécutées au clic ("[console] ..." ou "[player] ...")

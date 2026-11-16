@@ -2,6 +2,8 @@ package fr.azurium.vote;
 
 import com.destroystokyo.paper.profile.PlayerProfile;
 import com.destroystokyo.paper.profile.ProfileProperty;
+import io.papermc.paper.datacomponent.DataComponentTypes;
+import io.papermc.paper.datacomponent.item.TooltipDisplay;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -115,6 +117,12 @@ public final class ItemFactory {
             }
         }
         stack.setItemMeta(meta);
+        if (sec.getBoolean("hide-tooltip", false)) hideTooltip(stack);
         return stack;
+    }
+
+    /** Supprime totalement l'infobulle de l'item (y compris les infos F3+H). */
+    public static void hideTooltip(ItemStack stack) {
+        stack.setData(DataComponentTypes.TOOLTIP_DISPLAY, TooltipDisplay.tooltipDisplay().hideTooltip(true).build());
     }
 }
