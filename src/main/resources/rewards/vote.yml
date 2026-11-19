@@ -13,18 +13,16 @@
 # ============================================================
 
 commands:
-  - "[console] eco give %player% 100"
+  - "[console] crates givekey %player% cle_vote 1"
+  - "[console] flyplume addtime %player% 10m"
 
 items:
-  or:
-    item: GOLD_INGOT
-    amount: 2
   # exemple Nexo :
   # cle:
   #   item: "nexo:cle_vote"
   #   amount: 1
 
 messages:
-  - "%prefix%&aMerci d'avoir voté ! Tu as reçu ta récompense."
+  - "%prefix%&eMerci d'avoir voté ! Tu as reçu ta récompense."
 
 sound: "entity.player.levelup;1;1"

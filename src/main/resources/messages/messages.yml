@@ -7,42 +7,42 @@
 #                 %party_count% %month% %url% (+ %amount% %palier% %palier_remaining% selon le message)
 # ============================================================
 
-prefix: "&8[&bVote&8] "
+prefix: "&#E87833&lɪᴠᴀʟᴏɴᴀ &7» "
 
 no-permission: "%prefix%&cTu n'as pas la permission."
 player-only: "%prefix%&cCette commande est réservée aux joueurs."
 unknown-player: "%prefix%&cJoueur inconnu : &e%target%"
-reload: "%prefix%&aConfiguration rechargée."
+reload: "%prefix%&eConfiguration rechargée."
 
 # Lien de vote (chaque ligne est cliquable)
 vote-link:
-  - "%prefix%&7Clique ici pour voter : &b&n%url%"
-vote-link-hover: "&aClique pour ouvrir le site de vote"
+  - "%prefix%&eClique ici pour voter &7→ &6&n%url%"
+vote-link-hover: "&eClique pour accèder au site"
 
-vote-broadcast: "%prefix%&b%player% &7vient de voter ! &8(&f%current%&7/&f%required%&8) &7» &e/vote"
+vote-broadcast: "%prefix%&e%player% &7vient de voter ! &8(&c%current%&7/&e%required%&8) &7→ &e/vote"
 
-pending-join: "%prefix%&7Tu as &e%pending% &7récompense(s) de vote en attente ! &8» &e/vote"
-pending-claimed: "%prefix%&aTu as récupéré &e%amount% &arécompense(s) de vote !"
+pending-join: "%prefix%&eTu as &6%pending% &erécompense(s) de vote en attente ! &7→ &e/vote"
+pending-claimed: "%prefix%&eTu as récupéré &6%amount% &erécompense(s) de vote !"
 no-pending: "%prefix%&cTu n'as aucune récompense en attente."
 
-palier-claimed: "%prefix%&aTu as récupéré le palier &e%palier% votes &a!"
+palier-claimed: "%prefix%&eTu as récupéré le palier &6%palier% votes &e!"
 palier-locked: "%prefix%&cIl te manque &e%palier_remaining% &cvote(s) pour ce palier."
 palier-already: "%prefix%&cTu as déjà récupéré ce palier ce mois-ci."
-palier-available: "%prefix%&aTu peux récupérer le palier &e%palier% votes &a! &8» &e/vote"
+palier-available: "%prefix%&eTu peux récupérer le palier &6%palier% votes &e! &7→ &e/vote"
 
 # Diffusé à tous les joueurs quand la VoteParty se déclenche
 party-start:
   - ""
-  - "%prefix%&d&lVOTEPARTY &7» &fLe serveur a atteint &d%required% votes &f!"
-  - "%prefix%&7Tous les joueurs connectés reçoivent une récompense !"
+  - "%prefix%&6&lᴠᴏᴛᴇᴘᴀʀᴛʏ &7→ &eLe serveur a atteint &6%required% votes &e!"
+  - "%prefix%&eTous les joueurs connectés reçoivent une récompense !"
   - ""
 
 # Envoyé quand le joueur clique sur l'item VoteParty
 party-info:
-  - "%prefix%&dVoteParty &8» &f%current%&7/&f%required% &7votes &8(&f%percent%%&8)"
-  - "%prefix%&7Votes totaux sur le serveur : &f%server_total%"
+  - "%prefix%&6ᴠᴏᴛᴇᴘᴀʀᴛʏ &7→ &c%current%&7/&e%required% &evotes &8(&7%percent%%&8)"
+  - "%prefix%&eVotes totaux sur le serveur : &6%server_total%"
 
-month-reset: "%prefix%&aNouveau mois ! Les paliers de vote ont été réinitialisés. &8» &e/vote"
+month-reset: "%prefix%&eNouveau mois ! Les paliers de vote ont été réinitialisés. &7→ &e/vote"
 
 # Administration
 usage-admin:

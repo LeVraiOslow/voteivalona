@@ -163,7 +163,26 @@ public final class VoteService {
         }
 
         data().markDirty();
+        notifyVote(target, amount);
         checkParty();
+    }
+
+    /** Prévient les autres plugins (event AzuriumVoteEvent) et exécute vote.on-vote-commands. */
+    private void notifyVote(OfflinePlayer target, int amount) {
+        Runnable r = () -> {
+            Bukkit.getPluginManager().callEvent(new AzuriumVoteEvent(target, amount));
+            String name = target.getName();
+            if (name == null) return;
+            boolean onlyOnline = cfg().getBoolean("vote.on-vote-commands-only-online", true);
+            if (onlyOnline && !target.isOnline()) return;
+            for (String cmd : cfg().getStringList("vote.on-vote-commands")) {
+                if (cmd == null || cmd.isBlank()) continue;
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd.replaceFirst("^/", "")
+                        .replace("%player%", name).replace("%amount%", String.valueOf(amount)));
+            }
+        };
+        if (Bukkit.isPrimaryThread()) r.run();
+        else Bukkit.getScheduler().runTask(plugin, r);
     }
 
     public void claimPending(Player p) {

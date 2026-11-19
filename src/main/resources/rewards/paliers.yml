@@ -15,99 +15,72 @@
 paliers:
   10:
     description:
-      - "&7- &e500$"
+      - "&7• &e50.000<glyph:dollars1>"
     commands:
-      - "[console] eco give %player% 500"
+      - "[console] eco give %player% 50000"
   20:
     description:
-      - "&7- &e1 000$"
-      - "&7- &e16x Lingot d'or"
+      - "&7• &e75.000<glyph:dollars1>"
+      - "&7• &e2 &aClés Vote"
     commands:
-      - "[console] eco give %player% 1000"
-    items:
-      reward:
-        item: GOLD_INGOT
-        amount: 16
+      - "[console] eco give %player% 75000"
+      - "[console] crates givekey %player% cle_vote 2"
   30:
     description:
-      - "&7- &e1 500$"
-      - "&7- &e5x Diamant"
+      - "&7• &e100.000<glyph:dollars1>"
+      - "&7• &b25<glyph:gems>"
     commands:
-      - "[console] eco give %player% 1500"
-    items:
-      reward:
-        item: DIAMOND
-        amount: 5
+      - "[console] eco give %player% 100000"
+      - "[console] points give %player% 25"
   50:
     description:
-      - "&7- &e2 500$"
-      - "&7- &e10x Diamant"
+      - "&7• &e250.000<glyph:dollars1>"
+      - "&7• &e1 &bClé Rare"
     commands:
-      - "[console] eco give %player% 2500"
-    items:
-      reward:
-        item: DIAMOND
-        amount: 10
+      - "[console] eco give %player% 250000"
+      - "[console] crates givekey %player% rare_key 1"
   75:
     description:
-      - "&7- &e4 000$"
-      - "&7- &e16x Émeraude"
+      - "&7• &e300.000<glyph:dollars1>"
+      - "&7• &b100<glyph:gems>"
     commands:
-      - "[console] eco give %player% 4000"
-    items:
-      reward:
-        item: EMERALD
-        amount: 16
+      - "[console] eco give %player% 300000"
+      - "[console] points give %player% 100"
   100:
     description:
-      - "&7- &e6 000$"
-      - "&7- &e3x Bloc de diamant"
+      - "&7• &e500.000<glyph:dollars1>"
+      - "&7• &e1 &dClé Epic"
     commands:
-      - "[console] eco give %player% 6000"
-    items:
-      reward:
-        item: DIAMOND_BLOCK
-        amount: 3
+      - "[console] eco give %player% 500000"
+      - "[console] crates givekey %player% epic 1"
   150:
     description:
-      - "&7- &e9 000$"
-      - "&7- &e4x Débris de netherite"
+      - "&7• &e750.000<glyph:dollars1>"
+      - "&7• &b250<glyph:gems>"
     commands:
-      - "[console] eco give %player% 9000"
-    items:
-      reward:
-        item: NETHERITE_SCRAP
-        amount: 4
+      - "[console] eco give %player% 750000"
+      - "[console] points give %player% 250"
   200:
     description:
-      - "&7- &e12 000$"
-      - "&7- &e3x Pomme d'or enchantée"
+      - "&7• &e1.000.000<glyph:dollars1>"
+      - "&7• &e1 &6sᴘᴀᴡɴᴇʀ ᴀ ɢᴏʟᴇᴍs ᴅᴇ ғᴇʀ"
     commands:
-      - "[console] eco give %player% 12000"
-    items:
-      reward:
-        item: ENCHANTED_GOLDEN_APPLE
-        amount: 3
+      - "[console] eco give %player% 1000000"
+      - "[console] rs give spawner %player% iron_golem 1"
   300:
     description:
-      - "&7- &e20 000$"
-      - "&7- &e2x Lingot de netherite"
+      - "&7• &e1.500.000<glyph:dollars1>"
+      - "&7• &e1 &cClé Mythique"
     commands:
-      - "[console] eco give %player% 20000"
-    items:
-      reward:
-        item: NETHERITE_INGOT
-        amount: 2
+      - "[console] eco give %player% 1500000"
+      - "[console] crates givekey %player% mythique_key 1"
   500:
     description:
-      - "&7- &e40 000$"
-      - "&7- &e1x Bloc de netherite"
+      - "&7• &e2.500.000<glyph:dollars1>"
+      - "&7• &b1.000<glyph:gems>"
     commands:
-      - "[console] eco give %player% 40000"
-    items:
-      reward:
-        item: NETHERITE_BLOCK
-        amount: 1
+      - "[console] eco give %player% 2500000"
+      - "[console] points give %player% 1000"
     title:
-      title: "&6&lPALIER 500"
-      subtitle: "&7Félicitations !"
+      title: "&6&lᴘᴀʟɪᴇʀs ᴛᴇʀᴍɪɴᴇs"
+      subtitle: "&eFélicitations !"

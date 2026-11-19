@@ -13,61 +13,62 @@
 #  Ligne de lore "%rewards%" = remplacée par la description du palier (rewards/paliers.yml)
 # ============================================================
 
-title: "&8» &6&lPaliers de vote &8«"
+title: "<shift:-52><glyph:royaume_vote2>"
 size: 36
 claim-click: LEFT
 
 filler:
-  item: BLACK_STAINED_GLASS_PANE
+  item: nexo:air
   name: " "
 
 items:
   info:
     slot: 4
-    item: BOOK
-    name: "&e&lTes votes en %month%"
+    item: nexo:quest
+    name: "&6&lᴠᴏᴛᴇs ᴄᴇ ᴍᴏɪs ᴄɪ"
     lore:
+      - "&8ɪɴғᴏʀᴍᴀᴛɪᴏɴs"
       - ""
-      - "&7Votes ce mois-ci : &e%votes%"
-      - "&7Total depuis le début : &f%total_votes%"
+      - "&7• ᴠᴏᴛᴇs ᴅᴜ ᴍᴏɪs: &e%votes%"
+      - "&7• ᴠᴏᴛᴇs ᴛᴏᴛᴀʟ: &e%total_votes%"
       - ""
-      - "&7Les paliers sont réinitialisés"
-      - "&7le &e1er de chaque mois&7."
+      - "&7(Les paliers sont réinitialisés"
+      - "&7tous les 1er de chaque mois.)"
   back:
     slot: 31
-    item: ARROW
-    name: "&cRetour"
+    item: nexo:non
+    name: "&c&lʀᴇᴛᴏᴜʀ"
     action: MAIN
 
 states:
   locked:
-    item: RED_STAINED_GLASS_PANE
-    name: "&cPalier &e%palier% &cvotes"
+    item: nexo:giftgray
+    name: "&e&l%palier% &6&lᴠᴏᴛᴇs"
     lore:
+      - "&8ɪɴғᴏʀᴍᴀᴛɪᴏɴs"
       - ""
-      - "&7Progression : &c%votes%&8/&e%palier%"
-      - "&7Il te manque &c%palier_remaining% &7vote(s)"
+      - "&7• ᴘʀᴏɢʀᴇssɪᴏɴ: &c%votes%&8/&e%palier%"
       - ""
-      - "&7Récompenses :"
+      - "&6ʀᴇᴄᴏᴍᴘᴇɴsᴇs:"
       - "%rewards%"
   claimable:
-    item: LIME_STAINED_GLASS_PANE
-    name: "&aPalier &e%palier% &avotes"
+    item: nexo:giftgreen
+    name: "&e&l%palier% &6&lᴠᴏᴛᴇs"
     glow: true
     lore:
+      - "&8ɪɴғᴏʀᴍᴀᴛɪᴏɴs"
       - ""
-      - "&aTu as atteint ce palier !"
-      - ""
-      - "&7Récompenses :"
+      - "&6ʀᴇᴄᴏᴍᴘᴇɴsᴇs:"
       - "%rewards%"
       - ""
-      - "&e» Clic gauche pour récupérer"
+      - "&6ᴄʟɪᴄᴋ ɢᴀᴜᴄʜᴇ &7→ &eRécupéré"
   claimed:
-    item: GRAY_STAINED_GLASS_PANE
-    name: "&7Palier &e%palier% &7votes"
+    item: nexo:yess
+    name: "&e&l%palier% &6&lᴠᴏᴛᴇs"
     lore:
+      - "&8ɪɴғᴏʀᴍᴀᴛɪᴏɴs"
       - ""
-      - "&a✔ Déjà récupéré ce mois-ci"
+      - "&7• sᴛᴀᴛᴜᴛ: &a✔ Récupéré"
 
 paliers:
   10:

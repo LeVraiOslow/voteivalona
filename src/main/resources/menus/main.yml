@@ -5,7 +5,6 @@
 #  Chaque item : slot (ou slots: [0, 1, "3-5"]), item, amount, name, lore, glow, hide-flags,
 #                texture (tête en base64), head-owner (tête du joueur), commands, action
 #
-#  hide-tooltip : true = aucune infobulle au survol (le filler le fait déjà par défaut)
 #  item    : un matériau (DIAMOND), un item Nexo (nexo:monitem) ou PLAYER_HEAD + texture
 #  action  : VOTE | REWARDS | VOTEPARTY | PALIERS | MAIN | CLOSE | NONE
 #  commands: liste de commandes exécutées au clic ("[console] ..." ou "[player] ...")
@@ -14,70 +13,223 @@
 #                 %remaining% %percent% %bar% %server_total% %party_count% %month%
 # ============================================================
 
-title: "&8» &b&lVote &8«"
-size: 27
+title: "<shift:-52><glyph:royaume_vote>"
+size: 36
 
 filler:
-  item: BLACK_STAINED_GLASS_PANE
+  item: nexo:air
   name: " "
 
 items:
   vote:
-    slot: 10
-    item: NETHER_STAR
-    name: "&b&lVoter"
+    slot: 0
+    item: nexo:air
+    name: "&6&lᴠᴏᴛᴇ"
     glow: true
     lore:
+      - "&8ʀᴇᴅɪʀᴇᴄᴛɪᴏɴ"
       - ""
       - "&7Vote sur notre site pour gagner"
       - "&7des récompenses !"
       - ""
-      - "&e» Clique pour obtenir le lien"
+      - "&6ᴄʟɪᴄᴋ ɢᴀᴜᴄʜᴇ &7→ &eAccèder"
+    action: VOTE
+  vote1:
+    slot: 1
+    item: nexo:air
+    name: "&6&lᴠᴏᴛᴇ"
+    glow: true
+    lore:
+      - "&8ʀᴇᴅɪʀᴇᴄᴛɪᴏɴ"
+      - ""
+      - "&7Vote sur notre site pour gagner"
+      - "&7des récompenses !"
+      - ""
+      - "&6ᴄʟɪᴄᴋ ɢᴀᴜᴄʜᴇ &7→ &eAccèder"
+    action: VOTE
+  vote2:
+    slot: 2
+    item: nexo:air
+    name: "&6&lᴠᴏᴛᴇ"
+    glow: true
+    lore:
+      - "&8ʀᴇᴅɪʀᴇᴄᴛɪᴏɴ"
+      - ""
+      - "&7Vote sur notre site pour gagner"
+      - "&7des récompenses !"
+      - ""
+      - "&6ᴄʟɪᴄᴋ ɢᴀᴜᴄʜᴇ &7→ &eAccèder"
+    action: VOTE
+  vote3:
+    slot: 9
+    item: nexo:air
+    name: "&6&lᴠᴏᴛᴇ"
+    glow: true
+    lore:
+      - "&8ʀᴇᴅɪʀᴇᴄᴛɪᴏɴ"
+      - ""
+      - "&7Vote sur notre site pour gagner"
+      - "&7des récompenses !"
+      - ""
+      - "&6ᴄʟɪᴄᴋ ɢᴀᴜᴄʜᴇ &7→ &eAccèder"
+    action: VOTE
+  vote4:
+    slot: 10
+    item: nexo:air
+    name: "&6&lᴠᴏᴛᴇ"
+    glow: true
+    lore:
+      - "&8ʀᴇᴅɪʀᴇᴄᴛɪᴏɴ"
+      - ""
+      - "&7Vote sur notre site pour gagner"
+      - "&7des récompenses !"
+      - ""
+      - "&6ᴄʟɪᴄᴋ ɢᴀᴜᴄʜᴇ &7→ &eAccèder"
+    action: VOTE
+  vote5:
+    slot: 11
+    item: nexo:air
+    name: "&6&lᴠᴏᴛᴇ"
+    glow: true
+    lore:
+      - "&8ʀᴇᴅɪʀᴇᴄᴛɪᴏɴ"
+      - ""
+      - "&7Vote sur notre site pour gagner"
+      - "&7des récompenses !"
+      - ""
+      - "&6ᴄʟɪᴄᴋ ɢᴀᴜᴄʜᴇ &7→ &eAccèder"
+    action: VOTE
+  vote6:
+    slot: 18
+    item: nexo:air
+    name: "&6&lᴠᴏᴛᴇ"
+    glow: true
+    lore:
+      - "&8ʀᴇᴅɪʀᴇᴄᴛɪᴏɴ"
+      - ""
+      - "&7Vote sur notre site pour gagner"
+      - "&7des récompenses !"
+      - ""
+      - "&6ᴄʟɪᴄᴋ ɢᴀᴜᴄʜᴇ &7→ &eAccèder"
+    action: VOTE
+  vote7:
+    slot: 19
+    item: nexo:air
+    name: "&6&lᴠᴏᴛᴇ"
+    glow: true
+    lore:
+      - "&8ʀᴇᴅɪʀᴇᴄᴛɪᴏɴ"
+      - ""
+      - "&7Vote sur notre site pour gagner"
+      - "&7des récompenses !"
+      - ""
+      - "&6ᴄʟɪᴄᴋ ɢᴀᴜᴄʜᴇ &7→ &eAccèder"
+    action: VOTE
+  vote8:
+    slot: 20
+    item: nexo:air
+    name: "&6&lᴠᴏᴛᴇ"
+    glow: true
+    lore:
+      - "&8ʀᴇᴅɪʀᴇᴄᴛɪᴏɴ"
+      - ""
+      - "&7Vote sur notre site pour gagner"
+      - "&7des récompenses !"
+      - ""
+      - "&6ᴄʟɪᴄᴋ ɢᴀᴜᴄʜᴇ &7→ &eAccèder"
+    action: VOTE
+  vote9:
+    slot: 27
+    item: nexo:air
+    name: "&6&lᴠᴏᴛᴇ"
+    glow: true
+    lore:
+      - "&8ʀᴇᴅɪʀᴇᴄᴛɪᴏɴ"
+      - ""
+      - "&7Vote sur notre site pour gagner"
+      - "&7des récompenses !"
+      - ""
+      - "&6ᴄʟɪᴄᴋ ɢᴀᴜᴄʜᴇ &7→ &eAccèder"
+    action: VOTE
+  vote10:
+    slot: 28
+    item: nexo:air
+    name: "&6&lᴠᴏᴛᴇ"
+    glow: true
+    lore:
+      - "&8ʀᴇᴅɪʀᴇᴄᴛɪᴏɴ"
+      - ""
+      - "&7Vote sur notre site pour gagner"
+      - "&7des récompenses !"
+      - ""
+      - "&6ᴄʟɪᴄᴋ ɢᴀᴜᴄʜᴇ &7→ &eAccèder"
+    action: VOTE
+  vote11:
+    slot: 29
+    item: nexo:air
+    name: "&6&lᴠᴏᴛᴇ"
+    glow: true
+    lore:
+      - "&8ʀᴇᴅɪʀᴇᴄᴛɪᴏɴ"
+      - ""
+      - "&7Vote sur notre site pour gagner"
+      - "&7des récompenses !"
+      - ""
+      - "&6ᴄʟɪᴄᴋ ɢᴀᴜᴄʜᴇ &7→ &eAccèder"
     action: VOTE
 
   rewards:
-    slot: 12
-    item: CHEST
-    name: "&a&lRécompenses"
+    slot: 23
+    item: nexo:air
+    name: "&6&lʀᴇᴄᴏᴍᴘᴇɴsᴇs"
     lore:
+      - "&8ʀᴇᴄᴏᴍᴘᴇɴsᴇs"
       - ""
       - "&7Récupère les récompenses des votes"
       - "&7faits pendant que tu étais déconnecté."
       - ""
-      - "&7En attente : &e%pending%"
+      - "&7• ᴇɴ ᴀᴛᴛᴇɴᴛᴇ: &e%pending%"
       - ""
-      - "&e» Clique pour les récupérer"
+      - "&6ᴄʟɪᴄᴋ ɢᴀᴜᴄʜᴇ &7→ &eRécupérer"
+    action: REWARDS
+  rewards1:
+    slot: 24
+    item: nexo:air
+    name: "&6&lʀᴇᴄᴏᴍᴘᴇɴsᴇs"
+    lore:
+      - "&8ʀᴇᴄᴏᴍᴘᴇɴsᴇs"
+      - ""
+      - "&7Récupère les récompenses des votes"
+      - "&7faits pendant que tu étais déconnecté."
+      - ""
+      - "&7• ᴇɴ ᴀᴛᴛᴇɴᴛᴇ: &e%pending%"
+      - ""
+      - "&6ᴄʟɪᴄᴋ ɢᴀᴜᴄʜᴇ &7→ &eRécupérer"
+    action: REWARDS
+  rewards2:
+    slot: 25
+    item: nexo:air
+    name: "&6&lʀᴇᴄᴏᴍᴘᴇɴsᴇs"
+    lore:
+      - "&8ʀᴇᴄᴏᴍᴘᴇɴsᴇs"
+      - ""
+      - "&7Récupère les récompenses des votes"
+      - "&7faits pendant que tu étais déconnecté."
+      - ""
+      - "&7• ᴇɴ ᴀᴛᴛᴇɴᴛᴇ: &e%pending%"
+      - ""
+      - "&6ᴄʟɪᴄᴋ ɢᴀᴜᴄʜᴇ &7→ &eRécupérer"
     action: REWARDS
 
-  voteparty:
-    slot: 14
-    item: FIREWORK_ROCKET
-    name: "&d&lVoteParty"
-    lore:
-      - ""
-      - "&7Votes totaux du serveur : &f%server_total%"
-      - ""
-      - "&7Prochaine party : &d%current%&8/&d%required%"
-      - "%bar% &f%percent%%"
-      - ""
-      - "&7Tous les &d%required% votes&7, tous les joueurs"
-      - "&7connectés reçoivent une récompense !"
-    action: VOTEPARTY
-
   paliers:
-    slot: 16
-    item: EXPERIENCE_BOTTLE
-    name: "&6&lPaliers de vote"
+    slot: 30
+    item: nexo:enveloppe
+    name: "&6&lᴘᴀʟɪᴇʀs ᴅᴇ ᴠᴏᴛᴇ"
     lore:
+      - "&8ʀᴇᴅɪʀᴇᴄᴛɪᴏɴ"
       - ""
-      - "&7Tes votes en &f%month% &7: &e%votes%"
-      - "&7Paliers à récupérer : &a%claimable%"
+      - "&7• ᴠᴏᴛᴇs ᴅᴜ ᴍᴏɪs: &e%votes%"
+      - "&7• ᴘᴀʟɪᴇʀs ᴀ ʀᴇᴄᴜᴘᴇʀᴇʀ: &e%claimable%"
       - ""
-      - "&e» Clique pour voir les paliers"
+      - "&6ᴄʟɪᴄᴋ ɢᴀᴜᴄʜᴇ &7→ &eAccèder"
     action: PALIERS
-
-  close:
-    slot: 22
-    item: BARRIER
-    name: "&cFermer"
-    action: CLOSE

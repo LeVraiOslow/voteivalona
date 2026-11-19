@@ -74,6 +74,13 @@ Si la case « uniquement si le joueur est connecté » existe sur la récompense
 | `%azuriumvote_pending%` | récompenses en attente du joueur |
 | `%azuriumvote_claimable%` | paliers récupérables du joueur |
 
+## Prévenir d'autres plugins à chaque vote
+
+- **Event Java** `fr.azurium.vote.AzuriumVoteEvent` : déclenché à chaque vote enregistré
+  (`getPlayer()`, `getOnlinePlayer()`, `getAmount()`). Ajoute `AzuriumVote` en `softdepend` du plugin qui l'écoute.
+- **Commandes** `vote.on-vote-commands` dans `config/config.yml` : lancées en console à chaque vote
+  (`%player%`, `%amount%`), par exemple pour valider une quête.
+
 ## Commandes
 
 | Commande | Permission | Description |

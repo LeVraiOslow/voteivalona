@@ -14,6 +14,11 @@ vote:
   broadcast: true
   # Accepter un vote pour un joueur jamais vu par le serveur (déconseillé : l'UUID peut être faux)
   allow-unknown-players: false
+  # Commandes exécutées par la console à chaque vote enregistré (%player%, %amount%).
+  # Sert à prévenir un autre plugin (ex : valider la quête de vote du tutoriel).
+  on-vote-commands: []
+  # true = ces commandes ne sont lancées que si le joueur est connecté au moment du vote
+  on-vote-commands-only-online: true
 
 voteparty:
   # Nombre de votes nécessaires pour déclencher la VoteParty
